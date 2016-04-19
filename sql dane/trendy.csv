@@ -1,0 +1,4 @@
+\copy hurtownia.trendy(id_trendu,nazwa_trendu) from stdin with (delimiter ',', null '--');
+1,spadek
+2,utrzymanie
+3,wzrost

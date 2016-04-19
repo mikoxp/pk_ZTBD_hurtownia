@@ -1,0 +1,35 @@
+\copy hurtownia.waluty(id_waluty, nazwa_waluty) from stdin with (delimiter ',', null '--');
+CNY,Yuan_Renminbi
+CZK,Czech_Crown
+DKK,Danish_Krone
+EUR,Euro
+GBP,Pound_Sterling
+HKD,Hong_Kong_Dollars
+HRK,Croatian Kuna
+HUF,Forint
+IDR,Rupee
+ILS,New_Israeli_Shekel
+INR,Indian Rupee
+ISK,Icelandic_Krona
+JPY,Yen
+KRW,Won
+MXN,Mexican_Peso
+MYR,Ringgit
+NOK,Norwegian_Crown
+NZD,New Zealand Dollar
+PHP,Philippine_Peso
+RON,Leu
+RUB,Ruble
+SEK,Swedish_Krona
+SGD,Singapore_Dollar
+THB,Bat
+TRY,Lira
+UAH,Hryvnia
+USD,US_Dollar
+ZAR,Rand
+AUD,Australian Dollar
+BGN,Bulgarian Lev
+BRL,Brazilian Real
+CAD,Canadian Dollar
+CHF,Swiss Franc
+CLP,Chilean Peso

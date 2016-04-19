@@ -1,0 +1,14 @@
+﻿CREATE OR REPLACE FUNCTION hurtownia.kursyTrig() RETURNS TRIGGER AS $operacje$
+
+BEGIN
+
+SELECT hurtownia.wypelnieniekursywzrost();
+RETURN NEW;
+
+END;
+
+$operacje$ LANGUAGE plpgsql;
+
+CREATE TRIGGER kursyTrig AFTER INSERT OR UPDATE 
+ON hurtownia.kursy FOR STATEMENT
+EXECUTE PROCEDURE hurtownia.kursyTrig();

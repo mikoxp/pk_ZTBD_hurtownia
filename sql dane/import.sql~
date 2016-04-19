@@ -1,0 +1,5 @@
+\i hurtownia.sql
+\i generatorCzasu.sql
+--SELECT hurtownia.generatorczasu('1980-01-01','2016-12-31');
+\copy hurtownia.trendy from stdin with (delimiter ';');
+\i trendy.csv

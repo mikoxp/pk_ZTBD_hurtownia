@@ -1,0 +1,1 @@
+\COPY (SELECT  DISTINCT id_panstwa, id_waluty FROM hurtownia.panstwa NATURAL JOIN hurtownia.kursy) TO 'szablon.csv' DELIMITER ',' CSV HEADER;
