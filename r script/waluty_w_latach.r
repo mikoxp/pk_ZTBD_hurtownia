@@ -6,7 +6,7 @@ ids=unique(waluty$id_waluty);
 for(id in ids){
 w<-waluty[waluty$id_waluty==id,]
 x <- as.Date(sprintf("%d %02d 1", w$rok, w$miesiac), format="%Y %m %d")
-plot(x, w$kurs, type="l", col="blue", xlab="Time", ylab="PLN")
+plot(x, w$kurs, type="l", col="blue", xlab="Time", ylab="Wskaznik")
 title(w[1,2])
 #predykcja
 kurs = ts(w$kurs, frequency=12, start=c(w[1,3],w[1,4]))

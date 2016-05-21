@@ -94,6 +94,19 @@ INSERT INTO agregaty.trend_dominujacy(id_waluty,rok, id_trendu, procent_trendu)
 		(SELECT id_waluty,rok,SUM(ilosc) FROM tr 
 		GROUP BY id_waluty,rok) as foo2
 	ORDER BY 1,2);
+	
+DELETE FROM agregaty.pl;	
+INSERT INTO agregaty.pl(rok, miesiac, wartosc)
+(SELECT rok,miesiac,ROUND(AVG(nk)*100,2) as wartosc
+FROM
+	(SELECT id_waluty,rok,miesiac,kurs/m as nk
+	FROM hurtownia.kursy NATURAL JOIN hurtownia.czas NATURAL JOIN
+	(SELECT id_waluty,MAX(kurs) as m FROM
+		hurtownia.kursy
+		GROUP BY id_waluty) as foo) as a
+		
+GROUP BY rok,miesiac
+ORDER BY rok,miesiac);
 RETURN TRUE;
 END
 $$
